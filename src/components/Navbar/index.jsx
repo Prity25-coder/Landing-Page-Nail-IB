@@ -1,6 +1,10 @@
+import { useState } from "react";
 import Features from "../Pages/Features";
+import Signup from "../Pages/Signup";
 
 function Navbar() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="flex py-4 bg-white font-integralCF">
       <img
@@ -12,15 +16,20 @@ function Navbar() {
       <div className="mx-4">
         <ul className=" flex justify-center gap-4 cursor-pointer font-bold text-blue-600 ">
           <li>Home</li>
-          <li onClick={<Features/>}>Features</li>
+          <li onClick={<Features />}>Features</li>
           <li>Contact</li>
         </ul>
       </div>
 
       <div className="text-blue-600">
-        <button className=" border-blue-500 border-2 px-2 py-2 cursor-pointer font-bold rounded-lg ">
+        <button
+          className=" border-blue-500 border-2 px-2 py-2 cursor-pointer font-bold rounded-lg "
+          onClick={() => setIsModalOpen(true)}
+        >
           Sign-Up
         </button>
+
+        {isModalOpen && <Signup onClose={() => setIsModalOpen(false)} />}
       </div>
     </div>
   );
