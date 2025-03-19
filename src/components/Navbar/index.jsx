@@ -4,6 +4,7 @@ import Signup from "../Pages/Signup";
 
 function Navbar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpenF, setIsModalOpenF] = useState(false);
 
   return (
     <div className="flex py-4 bg-white font-integralCF">
@@ -16,7 +17,13 @@ function Navbar() {
       <div className="mx-4">
         <ul className=" flex justify-center gap-4 cursor-pointer font-bold text-blue-600 ">
           <li>Home</li>
-          <li onClick={<Features />}>Features</li>
+          <div>
+            <li onClick={() => setIsModalOpenF(true)}>Features</li>
+            {isModalOpenF && (
+              <Features onClose={() => setIsModalOpenF(false)} />
+            )}
+          </div>
+
           <li>Contact</li>
         </ul>
       </div>
