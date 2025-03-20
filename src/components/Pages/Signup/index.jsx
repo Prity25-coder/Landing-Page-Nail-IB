@@ -1,6 +1,6 @@
 function Signup({ onClose }) {
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
+    <div className="flex justify-center items-center  bg-gray-100">
       <div className="bg-white shadow-lg rounded-lg p-6 w-96">
         <div className="top-1 right-1 text-end ">
           <button
