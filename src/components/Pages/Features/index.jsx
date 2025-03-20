@@ -1,6 +1,6 @@
 function Features({ onClose }) {
   return (
-    <div className="font-sans mt-20 shadow-lg rounded-lg bg-gray-100">
+    <div className="font-sans mt-20 shadow-lg rounded-lg  bg-blue-200 text-black pb-2">
       <div className="top-1 right-1 text-end ">
         <button
           className="rounded-lg shadow-lg bg-gray-300 hover:bg-red-500 cursor-pointer "

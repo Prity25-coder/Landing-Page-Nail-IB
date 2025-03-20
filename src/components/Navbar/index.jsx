@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Features from "../Pages/Features";
 import Signup from "../Pages/Signup";
+import WorkSteps from "../Pages/WorkSteps";
 
 function Navbar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalOpenF, setIsModalOpenF] = useState(false);
+  const [isModalOpenHowItWork, setIsModalOpenHowItWork] = useState(false);
 
   return (
     <div className="flex py-4 bg-white font-integralCF">
@@ -24,7 +26,12 @@ function Navbar() {
             )}
           </div>
 
-          <li>Contact</li>
+          <div>
+            <li onClick={() => setIsModalOpenHowItWork(true)}>How it works</li>
+            {isModalOpenHowItWork && (
+              <WorkSteps onClose={() => setIsModalOpenHowItWork(false)} />
+            )}
+          </div>
         </ul>
       </div>
 
